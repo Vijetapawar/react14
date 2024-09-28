@@ -27,19 +27,17 @@ import React from 'react'
 import { useState } from 'react';
 
 const App = () => {
-  const [title, settitle] = useState("hello ji");
-  const changeInfo = () => {
-    settitle("it's changed");    
-    console.log(title);
-  }
-
+  // const time = new Date().toLocaleTimeString();
+  const [time, settime] = useState(new Date().toLocaleTimeString());
+  setInterval(() => {
+    settime((new Date().toLocaleTimeString()));
+  },1000);
   return (
     <div>
-      <h1>{title}</h1>
-      <button onClick={changeInfo}> click me!</button>
-
+      <h1>{time}</h1>
     </div>
   )
 }
 
 export default App
+
